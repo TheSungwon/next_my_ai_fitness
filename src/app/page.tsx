@@ -1,11 +1,23 @@
 // rafce
-import { SignInButton } from "@clerk/nextjs";
+"use client";
+import {
+  SignedIn,
+  SignedOut,
+  SignInButton,
+  SignOutButton,
+} from "@clerk/nextjs";
 import React from "react";
 
 const HomePage = () => {
   return (
     <div>
-      <SignInButton />
+      <SignedOut>
+        <SignInButton />
+      </SignedOut>
+
+      <SignedIn>
+        <SignOutButton />
+      </SignedIn>
     </div>
   );
 };
